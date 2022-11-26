@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import data from "./data";
+import backgroundVideo from '../src/video/video.mp4'
+import backgroundImage from '../src/video/photo.jpg'
 
 export default function App() {
   const date = new Date();
@@ -66,6 +68,10 @@ export default function App() {
   });
   return (
     <div className="app">
+            <video autoPlay loop muted id="video">
+        <source src={backgroundVideo} type="video/mp4"/>
+      </video>
+      <img src={backgroundImage} id="photo"></img>
       <div className="logo">
         <h4 className="logotext">DONUTS</h4>
       </div>
@@ -76,6 +82,7 @@ export default function App() {
           collaborateurs
         </p>
       </div>
+
       <div className="dataset">{dataset}</div>
     </div>
   );

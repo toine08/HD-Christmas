@@ -1,11 +1,29 @@
+#video {
+  z-index: -1;
+  position: fixed;
+  float: left;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+#photo{
+  z-index: -1;
+  display: none;
+  position: fixed;
+  float: left;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
 .app {
   text-align: center;
   margin-left: 150px;
   margin-right: 150px;
-
 }
 
-.logo{
+.logo {
   margin-top: 36px;
   color: white;
   font-size: larger;
@@ -13,32 +31,32 @@
   border-bottom: solid 1px white;
 }
 
-.title{
+.title {
   color: white;
   font-family: "Agrandir";
-  src:local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf) format('opentype');
+  src: local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf)
+    format("opentype");
   font-size: 35px;
 }
-.title > h1{
+.title > h1 {
   margin-bottom: -10px;
 }
-.text{
+.text {
   color: white;
   font-family: Agrandir;
-  src: local("Agrandir Regular") url(../src/font/Agrandir\ Regular\ 400.otf) format('opentype');
+  src: local("Agrandir Regular") url(../src/font/Agrandir\ Regular\ 400.otf)
+    format("opentype");
   font-size: 24px;
-
 }
-.dataset{
+.dataset {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: auto;
   align-content: start;
-  
 }
-.box{
+.box {
   background-color: #282c34;
   color: white;
   flex: 1 0 auto;
@@ -47,60 +65,24 @@
   font-size: 50px;
   font-weight: bolder;
 }
-.box:nth-child(1n){
-  flex-grow: 2;
-  width: 1/3;
-  height: 1/2;
-}
-.box:nth-child(2n){
-  flex-grow: 3;
-  width: 1/4;
-}
-.box:nth-child(3n){
-  flex-grow: 1;
-  width: 1/1;
-}
-.box:nth-child(4n){
-  flex-grow: 2;
-}
-.box:nth-child(5n){
-  flex-grow: 1;
-}
-.box:nth-child(6n){
-  flex-grow: 3;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1350px) {
+  #video {
+    display: none;
+  }
+  #photo{
+    display: inline;
+    height: 100%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 500px) {
+  .app{
+margin-left: 5px;
+margin-right: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .title{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: smaller;
   }
 }
