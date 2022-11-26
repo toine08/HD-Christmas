@@ -1,10 +1,78 @@
-.App {
+.app {
   text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+
 }
 
+.logo{
+  margin-top: 36px;
+  color: white;
+  font-size: larger;
+  width: 100%;
+  border-bottom: solid 1px white;
+}
+
+.title{
+  color: white;
+  font-family: "Agrandir";
+  src:local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf) format('opentype');
+  font-size: 35px;
+}
+.title > h1{
+  margin-bottom: -10px;
+}
+.text{
+  color: white;
+  font-family: Agrandir;
+  src: local("Agrandir Regular") url(../src/font/Agrandir\ Regular\ 400.otf) format('opentype');
+  font-size: 24px;
+
+}
+.dataset{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  align-content: start;
+  
+}
+.box{
+  background-color: #282c34;
+  color: white;
+  flex: 1 0 auto;
+  width: 75px;
+  margin: 8px;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.box:nth-child(1n){
+  flex-grow: 2;
+  width: 1/3;
+  height: 1/2;
+}
+.box:nth-child(2n){
+  flex-grow: 3;
+  width: 1/4;
+}
+.box:nth-child(3n){
+  flex-grow: 1;
+  width: 1/1;
+}
+.box:nth-child(4n){
+  flex-grow: 2;
+}
+.box:nth-child(5n){
+  flex-grow: 1;
+}
+.box:nth-child(6n){
+  flex-grow: 3;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
