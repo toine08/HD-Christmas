@@ -84,10 +84,10 @@ export default function App() {
       </video>
       <img alt="background with snow" src={backgroundImage} id="photo"></img>
       <div className="logo">
-        <h4 className="logotext">donuts</h4>
+        <h1 className="logotext">donuts</h1>
       </div>
       <div className="title">
-        <h1>Le calendrier de l’avent de Donuts</h1>
+        <h2>Le calendrier de l’avent de Donuts</h2>
         <p className="text">
           Découvrez chaque jour une nouvelle surprise proposée par l’un de nos
           collaborateurs
