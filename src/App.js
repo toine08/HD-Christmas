@@ -8,11 +8,6 @@ export default function App() {
   const date = new Date();
   const [day, month] = [date.getDate(), date.getMonth() + 1];
   const christmas = new Date("2022-12-25")
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-  }
 
   const dataset = data.map((items) => {
     let arrDate = items.date;
