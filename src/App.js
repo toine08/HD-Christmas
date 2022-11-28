@@ -1,13 +1,19 @@
-import logo from "./logo.svg";
+import { useState } from "react";
+import Card from "./components/card";
 import "./App.css";
 import data from "./data";
 import backgroundVideo from "../src/video/video.mp4";
 import backgroundImage from "../src/video/photo.jpg";
 
+
 export default function App() {
+  const [show, setShow] = useState(false);
+  let clickId = 0;
+  const [caseId, setCaseId] = useState(clickId)
+  //date zone
   const date = new Date();
   const [day, month] = [date.getDate(), date.getMonth() + 1];
-  const christmas = new Date("2022-12-25")
+  const christmas = new Date("2022-12-25");
 
   const dataset = data.map((items) => {
     let arrDate = items.date;
@@ -36,12 +42,17 @@ export default function App() {
     let newArrDate = arrDate.split("-");
     if (newArrDate[2] <= day && newArrDate[1] == month) {
       console.error("DATES SONT LES MEMES");
+      console.log(clickId);
       return (
         <div
+          onClick={() => {
+            setShow(!show);
+            setCaseId = target.id;
+          }}
           className="box"
           style={{
-            height: getSize(),
-            width: getSize(),
+            /*height: getSize(),
+            width: getSize(),*/
             backgroundColor: getColor(),
             color: "black",
           }}
@@ -49,18 +60,18 @@ export default function App() {
           {items.title}
         </div>
       );
-    } else if (newArrDate[2] === christmas.getDate() && newArrDate === christmas.getMonth()){
-      return <div style={{width: "300px"}}>
-        {items.title}
-      </div>
-    }
-    else {
+    } else if (
+      newArrDate[2] === christmas.getDate() &&
+      newArrDate === christmas.getMonth()
+    ) {
+      return <div className="box">{items.title}</div>;
+    } else {
       return (
         <div
           className="box"
           style={{
-            height:getSize(),
-            width: getSize(),
+            /*height: getSize(),
+            width: getSize(),*/
             backgroundColor: "#000000",
             borderStyle: "solid",
             borderColor: "white",
@@ -90,6 +101,7 @@ export default function App() {
       </div>
 
       <div className="dataset">{dataset}</div>
+      {show ? <Card id={clickId}></Card> : null}
     </div>
   );
 }

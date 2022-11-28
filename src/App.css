@@ -18,12 +18,16 @@
 }
 
 .app {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   margin-left: 150px;
   margin-right: 150px;
 }
 
 .logo {
+  text-align: center;
   margin-top: 36px;
   color: white;
   font-size: larger;
@@ -34,12 +38,17 @@
 .title {
   color: white;
   background-color: black;
+  height: fit-content;
+  display: grid;
+  justify-items: center;
+  flex-direction: column;
   font-family: "Agrandir";
   src: local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf)
-    format("opentype");
+  format("opentype");
   font-size: 35px;
 }
-.title > h1 {
+.title > h2 {
+  margin-top: 10px;
   margin-bottom: -10px;
 }
 .logotext {
@@ -54,25 +63,44 @@
   font-size: 24px;
 }
 .dataset {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 5px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(6, 150px);
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  /*flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: auto;
   align-content: start;
   width: 100%;
-  height: 100%;
+  height: 100%;*/
 }
 .box {
   background-color: #282c34;
   color: white;
-  margin: 8px;
-  padding: 5px;
+  min-width: fit-content;
+  margin: 10px;
   font-size: 50px;
   font-weight: bolder;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  padding: 20px;
+}
+.box:nth-child(25){
+  grid-column: 1/5;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 1350px) {
@@ -93,5 +121,15 @@
     display: flex;
     flex-wrap: wrap;
     font-size: smaller;
+  }
+  .dataset{
+    grid-template-columns: 150px 100px;
+    row-gap: 2px;
+    column-gap: 5px;
+    grid-auto-columns: minmax(fit-content, auto);
+    grid-auto-rows: minmax(fit-content, auto);
+  }
+  .box:nth-child(25){
+    grid-column: 1/3;
   }
 }
