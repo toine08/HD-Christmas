@@ -4,17 +4,25 @@ import "./App.scss";
 import data from "./data";
 import backgroundVideo from "../src/video/video.mp4";
 import backgroundImage from "../src/video/photo.jpg";
+import { click } from "@testing-library/user-event/dist/click";
+import { getValue } from "@testing-library/user-event/dist/utils";
 
 
 export default function App() {
   const [show, setShow] = useState(false);
-  const [caseId, setCaseId] = useState(0)
+  const [caseId, setCaseId] = useState("")
+
   //date zone
   const date = new Date();
   const [day, month] = [date.getDate(), date.getMonth() + 1];
   const christmas = new Date("2022-12-25");
-
   const colorArray = ["#3D49E8","#28AB67","#EA5D8D"];
+
+
+  /*function getId(){
+    var clickId = data.findIndex(data[collectId].id)
+    return clickId
+  }*/
 
 
   const dataset = data.map((items) => {
@@ -23,17 +31,23 @@ export default function App() {
       var color = items.id % colorArray.length;
       return color
     }
-    console.log(getColor())
+
+    const handleClick = (e)=>{
+      showCase()
+      var collectId = items.id
+      setCaseId(collectId)
+
+    }
+    function showCase(){
+      setShow(!show)
+    }
 
     let newArrDate = arrDate.split("-");
     if (newArrDate[2] <= day && newArrDate[1] == month) {
       //console.error("DATES SONT LES MEMES");
       return (
         <div
-          onClick={() => {
-            setShow(!show);
-            setCaseId=items.id;
-          }}
+        onClick={((e) => handleClick(e, data))}
           className="box goodday"
           style={{
             backgroundColor:colorArray[getColor()],
@@ -42,9 +56,8 @@ export default function App() {
           {items.title}
         </div>
       );
-    } else if (
-      newArrDate[2] === christmas.getDate() &&
-      newArrDate === christmas.getMonth()
+    } 
+    else if ( newArrDate[2] === christmas.getDate() && newArrDate === christmas.getMonth()
     ) {
       return <div className="box">{items.title}</div>;
     } else {
@@ -72,9 +85,8 @@ export default function App() {
           collaborateurs
         </p>
       </div>
-
+      {show ? <Card idCase={caseId}></Card> : null}
       <div className="dataset">{dataset}</div>
-      {show ? <Card id={caseId}></Card> : null}
     </div>
   );
 }
