@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Agrandir Grand Heavy";
+  src: url(../src/font/AgrandirGrandHeavy800.otf) format('opentype')
+}
+@font-face {
+  font-family: "Agrandir Regular";
+  src: url(../src/font/AgrandirRegular400.otf) format('opentype');
+}
 #video {
   z-index: -1;
   position: fixed;
@@ -42,9 +50,7 @@
   display: grid;
   justify-items: center;
   flex-direction: column;
-  font-family: "Agrandir";
-  src: local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf)
-  format("opentype");
+  font-family: "Agrandir Grand Heavy";
   font-size: 35px;
 }
 .title > h2 {
@@ -52,14 +58,11 @@
   margin-bottom: -10px;
 }
 .logotext {
-  src: local("Agrandir") url(../src/font/Agrandir\ Grand\ Heavy\ 800.otf) format("opentype");
-  font-weight: 800;
+  font-family: "Agrandir Grand Heavy";
 }
 .text {
   color: white;
-  font-family: Agrandir;
-  src: local("Agrandir Regular") url(../src/font/Agrandir\ Regular\ 400.otf)
-    format("opentype");
+  font-family: "Agrandir";
   font-size: 24px;
 }
 .dataset {
@@ -91,6 +94,16 @@
   justify-content: flex-end;
   align-items: flex-end;
   padding: 20px;
+}
+.goodday{
+  color: black;
+}
+.nottheday{
+  background-color: #000000;
+  border-style: solid;
+  border-color: white;
+  border-width: "thin";
+  pointer-events: none;
 }
 .box:nth-child(25){
   grid-column: 1/5;

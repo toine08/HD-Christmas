@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "./components/card";
-import "./App.css";
+import "./App.scss";
 import data from "./data";
 import backgroundVideo from "../src/video/video.mp4";
 import backgroundImage from "../src/video/photo.jpg";
@@ -8,53 +8,35 @@ import backgroundImage from "../src/video/photo.jpg";
 
 export default function App() {
   const [show, setShow] = useState(false);
-  let clickId = 0;
-  const [caseId, setCaseId] = useState(clickId)
+  const [caseId, setCaseId] = useState(0)
   //date zone
   const date = new Date();
   const [day, month] = [date.getDate(), date.getMonth() + 1];
   const christmas = new Date("2022-12-25");
 
+  const colorArray = ["#3D49E8","#28AB67","#EA5D8D"];
+
+
   const dataset = data.map((items) => {
     let arrDate = items.date;
-    function getColor() {
-      let blue = "#3D49E8";
-      let green = "#28AB67";
-      let pink = "#EA5D8D";
-      if (Math.random() <= 0.33) {
-        return blue;
-      } else if (Math.random() >= 0.33 && Math.random() <= 0.66) {
-        return green;
-      } else return pink;
+    function getColor(){
+      var color = items.id % colorArray.length;
+      return color
     }
-
-    function getSize() {
-      let small = "200px";
-      let medium = "250px";
-      let big = "275px";
-      if (Math.random() <= 0.33) {
-        return small;
-      } else if (Math.random() >= 0.33 && Math.random() <= 0.66) {
-        return medium;
-      } else return big;
-    }
+    console.log(getColor())
 
     let newArrDate = arrDate.split("-");
     if (newArrDate[2] <= day && newArrDate[1] == month) {
-      console.error("DATES SONT LES MEMES");
-      console.log(clickId);
+      //console.error("DATES SONT LES MEMES");
       return (
         <div
           onClick={() => {
             setShow(!show);
-            setCaseId = target.id;
+            setCaseId=items.id;
           }}
-          className="box"
+          className="box goodday"
           style={{
-            /*height: getSize(),
-            width: getSize(),*/
-            backgroundColor: getColor(),
-            color: "black",
+            backgroundColor:colorArray[getColor()],
           }}
         >
           {items.title}
@@ -68,16 +50,7 @@ export default function App() {
     } else {
       return (
         <div
-          className="box"
-          style={{
-            /*height: getSize(),
-            width: getSize(),*/
-            backgroundColor: "#000000",
-            borderStyle: "solid",
-            borderColor: "white",
-            borderWidth: "thin",
-          }}
-        >
+          className="box nottheday">
           {items.title}
         </div>
       );
@@ -101,7 +74,7 @@ export default function App() {
       </div>
 
       <div className="dataset">{dataset}</div>
-      {show ? <Card id={clickId}></Card> : null}
+      {show ? <Card id={caseId}></Card> : null}
     </div>
   );
 }
