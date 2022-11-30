@@ -2,7 +2,7 @@ const data =[
     {
         id: 1,
         title: "1",
-        date: "2022-11-30",
+        date: "2022-12-01",
         text: "First day of december",
         author: "Toine",
         image: "https://yt3.ggpht.com/a/AATXAJzyjVLFIuN2EKLNCVWykziSO8LWVwfstFBIc_AT=s900-c-k-c0xffffffff-no-rj-mo",
@@ -11,7 +11,7 @@ const data =[
     {
         id: 2,
         title: "2",
-        date: "2022-11-30",
+        date: "2022-12-02",
         text: "CHRISTMAS",
         author: "Toine",
         image: "https://yt3.ggpht.com/a/AATXAJzyjVLFIuN2EKLNCVWykziSO8LWVwfstFBIc_AT=s900-c-k-c0xffffffff-no-rj-mo",
