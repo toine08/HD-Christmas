@@ -49,7 +49,7 @@ export default function App() {
     } 
     else if ( newArrDate[2] === christmas.getDate() && newArrDate === christmas.getMonth()
     ) {
-      return <div className="box nottheday">{items.title}</div>;
+      return <div className="nottheday">{items.title}</div>;
     } else {
       return (
         <div
