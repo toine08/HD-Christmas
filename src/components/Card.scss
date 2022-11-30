@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Agrandir Grand Heavy";
+  src: url(../../src/font/AgrandirGrandHeavy800.otf) format('opentype')
+}
+@font-face {
+  font-family: "Agrandir Regular";
+  src: url(../../src/font/AgrandirRegular400.otf) format('opentype');
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-view{
+  animation: .7s ease-in 0s 1 slideInFromLeft;
+  display: flex;
+}
+
+.card{
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 0;
+    color: black;
+    display: flex;  
+  }
+
+  //button
+  .button-div{
+    position: relative;
+    z-index: 1;
+    left: 0;
+    margin-top: -1.5rem;
+    margin-left: 52rem;
+  }
+  .buttonHide{
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius:5rem;
+    border-style: none;
+    color: black;
+    background-color: white;
+  }
+
+  //left part
+  .left{
+    height: 50vh;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: baseline;
+    padding: 0rem 3rem 0rem 2rem;
+
+  }
+  .day{
+    font-size: 2rem;
+    font-family: "Agrandir Grand Heavy";
+  }
+  .photo{
+    width: 11rem;
+    height: fit-content;
+  }
+
+  //right part
+  .right{
+    height: inherit;
+    justify-content: flex-end;
+  }
+  .right-media{
+    height: 50vh;
+    position: absolute;
+    width: fit-content;
+    z-index: -1;
+
+  }

@@ -4,8 +4,6 @@ import "./App.scss";
 import data from "./data";
 import backgroundVideo from "../src/video/video.mp4";
 import backgroundImage from "../src/video/photo.jpg";
-import { click } from "@testing-library/user-event/dist/click";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 
 export default function App() {
@@ -17,13 +15,6 @@ export default function App() {
   const [day, month] = [date.getDate(), date.getMonth() + 1];
   const christmas = new Date("2022-12-25");
   const colorArray = ["#3D49E8","#28AB67","#EA5D8D"];
-
-
-  /*function getId(){
-    var clickId = data.findIndex(data[collectId].id)
-    return clickId
-  }*/
-
 
   const dataset = data.map((items) => {
     let arrDate = items.date;
@@ -44,7 +35,6 @@ export default function App() {
 
     let newArrDate = arrDate.split("-");
     if (newArrDate[2] <= day && newArrDate[1] == month) {
-      //console.error("DATES SONT LES MEMES");
       return (
         <div
         onClick={((e) => handleClick(e, data))}

@@ -29,7 +29,6 @@
 .app {
   display: flex;
   justify-content: center;
-  align-content: center;
   flex-direction: column;
   margin-left: 150px;
   margin-right: 150px;
@@ -55,6 +54,7 @@
   font-size: 35px;
 }
 .title > h2 {
+  text-align: center;
   margin-top: 10px;
   margin-bottom: -10px;
 }
@@ -70,20 +70,13 @@
   margin: 5px;
   display: grid;
   height: 100%;
-  grid-template-columns: 250px 175px 290px 300px;
+  grid-template-columns: 13rem 10rem 15rem 18rem;
   grid-auto-columns: minmax(4, 25vh);
-  grid-template-rows: 150px 250px 220px 270px 180px 200px;
+  grid-template-rows: 12.5rem 15.5rem 14rem 13.5rem 15rem 15rem;
   grid-auto-rows: minmax(15vh, auto);
   grid-gap: 5px;
   justify-content: center;
   align-content: center;
-  /*flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: auto;
-  align-content: start;
-  width: 100%;
-  height: 100%;*/
 }
 .box {
   background-color: #282c34;
@@ -115,20 +108,15 @@
   pointer-events: none;
 }
 .box:nth-child(24){
-  grid-column: 3/4;
+  grid-column: 1/3;
 }
 .box:nth-child(25){
-  grid-column: 4/5;
+  grid-column: 3/5;
 }
 
-.card{
-  top: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 99;
-  height: 100%;
-  width: 100%;
-}
+
+//Card.js styling
+
 
 @media only screen and (max-width: 1350px) {
   #video {
