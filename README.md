@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Calendrier de l'avent donuts
+Voici le résultat du challenge du calendrier de l'avent. Certes, il y a des choses qui restent à faire mais mon manque d'apprentissge et la contrainte de temps font que je suis obligé de rendre le site en l'état.
+### Ce qu'il me reste à faire 
+Comme dit plus haut je n'ai pas pu finir entièrement le site ou en tout cas dans un résultat proche du votre maquette mais voilà ce que je devrais amélioré en premier lieu et les plus grosses améliorations à faire:
+- Améliorer le responsive qui est quasi inexistant !!!et le css pour les autres navigateur!!!
+- Amélioer les cases du calendrier pour que ce soit plus proche de la maquette.
+- Ajouter un cms afin de pouvoir avoir des cases de meilleures qualités car l'utilisation du tableau n'est pas la meilleure des choses niveau optimisation.
+- Refactorer mon code car le but de React est d'utiliser des components.
+- Eviter d'utiliser la fonction getColor et le style à l'intérieur du react et tout mettre dans le scss.
+- Pipeline CI/CD.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Challenge rencontrer
+J'ai rencontrer 2 principaux challenge sur ce projet le premier étant la grid pour les cases du calendrier. J'ai eu de la peine à avoir un résulat comme le votre mais j'ai essayé de me rapprocher au plus de votre maquette. Les tailles différente a été le plus compliqué et je n'ai par exemple pas réussi à faire des petites cases.
+Le deuxième principale challenge a été de devoir afficher le bon résultat quand on appuye sur une case. J'ai du chercher pendant plusieurs heures comment faire pour retourner seulement les infos d'une case plutôt que tout le tableau. Mais j'y suis arrivé en cherchant des solutions sur internet et en essayant plusieurs options (et beaucoup de console.log un peu partout).
 
-## Available Scripts
+## Installation et lancement du site en local
+Pour répliquer le site sur votre ordinateur il vous faudra:
 
-In the project directory, you can run:
+- Cloner le projet sur votre machine
+- Rentrer dans le dossier de votre machine
+-- ```cd christmas ```
+- faire la commande npm install pour installer tout les modules au bon fonctionnement du projet
+-- ```npm install```
+- Après l'installation des modules il vous suffit de faire la commande ```npm start``` à fin de lancer le projet
 
-### `npm start`
+## Pour déployer le site sur internet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Utiliser vercel cli si vous ne l'avez pas vous pouvez faire ```sudo npm i -g vercel```
+- Après l'avoir installer correctement et que votre compte vercel soit lié à vercel CLI vous pouvez effectuer la commande ```vercel deploy```
+- Après quelque secondes vous pourrez simplement cliquer sur le lien mis à disposition et vous pourrez voir le résultat
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies utilisé 
+Pour ce site internet j'ai utilisé ReactJs avec javascript ainsi que du scss pour le style et vercel pour le déploiement du site web. Je n'ai pas utilisé de CMS pour mettre du contenu dans les cases mais simplement un tableau (```data.js```). Pas scalable mais efficace.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
